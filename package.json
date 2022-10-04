@@ -12,17 +12,8 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "author": "Zora Peteri (https://github.com/zorapeteri)",
-  "homepage": "https://github.com/zorapeteri/react-tweet-card#readme",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zorapeteri/react-tweet-card.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zorapeteri/react-tweet-card/issues"
+    "url": "git@github.com:kiran-bhalerao/react-tweet-card.git"
   },
   "keywords": [
     "twitter",
