@@ -1,6 +1,6 @@
 {
   "name": "@kiran-bhalerao/react-tweet-card",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A React component to display tweets",
   "main": "lib/index.js",
   "scripts": {
@@ -12,6 +12,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "author": "Zora Peteri (https://github.com/zorapeteri)",
   "homepage": "https://github.com/zorapeteri/react-tweet-card#readme",
   "repository": {
