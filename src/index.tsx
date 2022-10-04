@@ -1,20 +1,20 @@
-import React from 'react';
-import UserDetails from 'components/UserDetails';
-import Details from 'components/Details';
-import Tweet from 'components/Tweet';
 import Container from 'components/Container';
-import TwitterLogo from 'components/TwitterLogo';
+import Details from 'components/Details';
 import Engagement from 'components/Engagement';
-import { ThemeOption, TweetCardColors } from './themes';
+import Tweet from 'components/Tweet';
+import TwitterLogo from 'components/TwitterLogo';
+import UserDetails from 'components/UserDetails';
+import React from 'react';
 import './index.css';
+import { ThemeOption, TweetCardColors } from './themes';
 
 type TweetCardProps = React.HTMLAttributes<HTMLDivElement> & {
   author: {
-    name: string,
-    username: string,
-    image: string,
-    isVerified?: boolean,
-    isProtected?: boolean,
+    name: string;
+    username: string;
+    image: string;
+    isVerified?: boolean;
+    isProtected?: boolean;
   };
   engagement?: {
     replies?: number;
@@ -22,6 +22,7 @@ type TweetCardProps = React.HTMLAttributes<HTMLDivElement> & {
     likes?: number;
   };
   tweet: string;
+  img?: string;
   time: Date | string;
   source: string;
   permalink?: string;
@@ -34,7 +35,7 @@ type TweetCardProps = React.HTMLAttributes<HTMLDivElement> & {
   showDetails?: boolean;
   showEngagement?: boolean;
   emojis?: boolean;
-}
+};
 
 const TweetCard = ({
   author,
@@ -46,15 +47,16 @@ const TweetCard = ({
   clickableProfileLink,
   showDetails = true,
   showEngagement = true,
+  img,
   emojis,
   ...rest
-} : TweetCardProps) => (
-  <Container {...({ ...rest })}>
-    <UserDetails {...({ ...author, clickableProfileLink })} />
-    <TwitterLogo {...({ permalink })} />
-    <Tweet {...({ tweet })} />
-    {showDetails && <Details {...({ time, source, permalink })} />}
-    {showEngagement && <Engagement {...({ ...engagement, emojis })} />}
+}: TweetCardProps) => (
+  <Container {...{ ...rest }}>
+    <UserDetails {...{ ...author, clickableProfileLink }} />
+    <TwitterLogo {...{ permalink }} />
+    <Tweet {...{ tweet, img }} />
+    {showDetails && <Details {...{ time, source, permalink }} />}
+    {showEngagement && <Engagement {...{ ...engagement, emojis }} />}
   </Container>
 );
 
